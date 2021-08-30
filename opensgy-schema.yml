@@ -1,5 +1,8 @@
 # This page models the structure of a OpenSGY object
 $cfg: # any objects used to resolve references in other objects
+  content:
+    markup: AsciiDoc # alternately CommonMark?
+    converter: asciidoctor
   paths:  # from site.url/, Liquid
     terms: # path to `rules` object
     rules: # path to `terms` onject

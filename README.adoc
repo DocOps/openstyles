@@ -32,7 +32,7 @@ single-sourced glossaries::
 More than just term-and-definition, the framework enables extensive metadata, ideal for publishing tailored-but-single-sourced glossaries across multiple products or projects.
 
 With Open Styles, you can create these or related kinds of _canonical_ references for your whole organization, and even your customer users.
-Use AsciiDoc to format reference content and contextualize with topical content in an article or wiki format.
+Use AsciiDoc or Markdown to format reference content and contextualize with topical content in an article or wiki format.
 
 Create and organize rules in flat-file data sources (*YAML*), publish them in reader-friendly formats (*HTML* portal, *PDF* manual), then use *linters like link:{vale_www}[Vale]* to enforce those rules in your output.
 
