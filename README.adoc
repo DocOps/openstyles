@@ -1,0 +1,68 @@
+:vale_www: https://docs.errata.ai/vale/about
+:freestyles_www: https://www.freestylegui.de
+:openstyles_www: https://www.openstyleguid.es
+:docopslab_www:  https://github.com/DocOps
+:toc: macro
+ifndef::env-github[:icons: font]
+ifdef::env-github[]
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+= Open Styles: A linter-friendly style-guide sourcing system
+
+toc::[]
+
+Open Styles is a framework for creating and publishing _style guides and glossaries_ of all kinds, including:
+
+design style guides::
+For branding, user interfaces, publishing templates, etc.
+
+content style guides::
+For sentence style, proper terminology, grammar, graphics guidance, and other writing rules.
+
+source-code style guides::
+For programming languages and markup formats, from Java and C++ to HTML and AsciiDoc -- rules for formatting the source itself.
+
+single-sourced glossaries::
+More than just term-and-definition, the framework enables extensive metadata, ideal for publishing tailored-but-single-sourced glossaries across multiple products or projects.
+
+With Open Styles, you can create these or related kinds of _canonical_ references for your whole organization, and even your customer users.
+Use AsciiDoc to format reference content and contextualize with topical content in an article or wiki format.
+
+Create and organize rules in flat-file data sources (*YAML*), publish them in reader-friendly formats (*HTML* portal, *PDF* manual), then use *linters like link:{vale_www}[Vale]* to enforce those rules in your output.
+
+OpenSGY ("`Open Siggy`") is a YAML-based markup format for *term*- and *rule*-defining objects.
+These terms and rules obey an internal logic can be combined and reshaped for rendering into references.
+
+The Open Styles framework includes *basic back-end (Jekyll) and front-end (jQuery) tooling* to render your data for reference display and interactivity.
+If you extend it to incorporate other converters or front-end components, please consider contributing back to this project.
+
+The flagship project of Open Styles, and currently the only known implementation, is the link:{freestyles_www}[*FreeStyles* Technical Documentation Writer's Reference].
+Use that project as a guide or customize it for your own purposes.
+
+== Project Scope
+
+The aim of the Open Styles project is to empower authors, reviewers, and automation routines with everything needed to ensure quality plaintext source matter, be it programming code or textual content.
+
+. A standardized data object suitable for conveying:
+* word meaning/usage descriptions rich in metadata (terms)
+* _text/code style_ preferences as actionable instructions (rules)
+. A system of cascading (inheritable and overwritable) definitions enabling:
+* downstream subscriptions customizable down to the term/rule level
+* straightforward forking/syncing
+. Exemplary parser implementations:
+* Jekyll/Liquid-based parser of rule/term objects into content objects & pages
+* JavaScript implementation identifies glossary terms
+* [Your implementation here?]
+
+== Project Status
+
+At this point, the project is just a draft schema model looking for honest feedback and some collaborators.
+The initial exemplary tooling will be done in Ruby, though because the common data format is YAML, generators should be readily reproducible in other languages, for non-Ruby static-site generators and so forth.
+
+If you would like to participate in evaluating the _source format_ or any eventual _tooling_ around this project, link:{openstyles_git}/issues/1[_please_ leave a message here] for this project.
+
+If you are more interested in helping to build the flagship publication for Open Styles, check out link:{freestyles_git}[Free Styles] and consider joining the contributor team there.

@@ -1,0 +1,125 @@
+# This page models the structure of a OpenSGY object
+$cfg: # any objects used to resolve references in other objects
+  paths:  # from site.url/, Liquid
+    terms: # path to `rules` object
+    rules: # path to `terms` onject
+    # The above properties define either a directory containing files OR
+    #  a file containing the `terms:` and/or `rules:` object.
+    # If the path is a file, it must contain the object key (`rules` or `terms`)
+    # If the path is a folder, the files in it should NOT contain the `rules`
+    #  or `terms` object keys
+    # Organize terms in files arranged by kind, initial letter, or any
+    #  rbitrary criterion
+  kinds: # optional reference dictionary for arbitrary 'kind' property
+    - name: Technology
+      slug: technology
+      type: term # whether to associate this kind with term|rule|both*
+    - name: Business
+      slug: business
+      type: term
+    - name: Confidential
+      slug: confidential
+      show: false # hide this kind from end-users if false
+      type: term
+  tags: # optional reference dictionary for arbitrary `tags` property
+    - name: tag name
+      slug: tag-slug
+  categories: # # optional reference dictionary for arbitrary `cats` property
+    - name: category name
+      slug: cat-slug
+  links: # optional reference dictionary for arbitrary `guides` property
+    google:
+      text: Google Developer Style Guide
+      href: https://developers.google.com/style
+      tplt: "/word-list#letter-{{ term | first }}" # path from href base
+    micros:
+      text: Microsoft Writing Style Guide
+      href: https://docs.microsoft.com/en-us/style-guide
+      tplt: "/a-z-word-list-term-collections/{{ term | first }}/{{ path | default: slug }}"
+    # your favorite guide here
+  linters:
+    vale: {} # general Vale configuration
+    # your favorite linter here
+terms:
+  - slug:     # required, unique
+    term:     # optional, not unique
+    kind:     # optional reference to a defined `kind`
+    # GLOSSARY PROPERTIES
+    desc:     # required, description/definition of the term itself
+    user:     # optional customer-user-facing description
+              # A special/external definition for end-users to see.
+              # Place {$desc} as token to render the entire `desc` property
+              #  value into the user-facing description.
+    # The show/hide boolean properties are to enable setting overall defaults
+    #  and excepting only the minority
+    hide: false # optional, hide from users when category default == 'show'?
+    show: true  # optional, show to users when category default == 'hide'?
+    refs: [] # optional array of xref/href/link items (see refs schema below)
+    # STYLE PROPERTIES
+    note:     # a note about _usage_ of the term
+    tags: []  # optional array of tags
+              #  strings or slugs to match $cfg.tags dict
+    cats: []  # optional array of categories
+              #  strings or slugs to match $cfg.categories dict
+    akas: []  # optional official alternate terms (such as abbreviations)
+              #  akas are strings that do not need to correlate to terms
+              #   e.g., akas: ['some words','another phrase']
+              #  if they do correlate to terms, make them slugs
+              #   e.g., akas: ['some words',another-term]
+    alts: []  # suggested alternatives to less-desirable terms
+              #  alts are strings that do not need to correlate to terms
+              #  if they do correlate to terms, make them slugs
+    cues: []  # optional additional tokens to match for linting
+    also: []  # see these other terms/rules (array of slugs)
+    obey: # optional (terms only) array of rules to which term must conform
+          # signals the need to be added to aggregate rules
+    lint: # optional linter-specific rules configuration
+      vale: {} # Vale-specific configs
+               # Some Vale settings are inferred from node context
+               # Any content in this object is passed directly to Vale
+      # your favorite linter here
+    refs: [] # see REFERENCES below
+
+    # CUSTOM
+    meta:
+      # Any and all of your own data in any form
+      # For example, OpenSGY has opted not to include an author property, but
+      #  you very well might wish to add such a property.
+
+    # optional references to resources
+    # These may appear under glossary: or style: sections
+    # If the section is to be repeated in both, use &refs and *refs
+    #  see YAML node anchors https://anil.io/blog/symfony/yaml/using-variables-in-yaml-files/
+rules:
+  - slug:     # required, unique
+    name:     # optiona, text label to identify rule
+    kind:     # optional reference to a defined `kind`
+    note:     # required; human-facing description & optional rationale
+    lint:     # optional linter-specific rules configuration
+      vale: {} # Vale-specific configs
+               # Some Vale settings are inferred from node context
+               # Any content in this object is passed directly to Vale
+      # your favorite linter here
+    refs: [] # see REFERENCES below
+    # CUSTOM
+    meta:
+      # Any and all of your own data in any form
+      # For example, OpenSGY has opted not to include an author property, but
+      #  you very well might wish to add such a property.
+
+# REFERENCES
+# A property of both terms and rules, formatted as follows
+refs:
+  # each of the following sources is optional; 'required' refers to
+  #  within the ref item's object, once you choose xref/href/link
+  - xref: # required; cross-reference identity of an object in this guide
+    text: # optional text to hyperlink; defaults to linked ref title/name/ID
+    # since `also` exists, xrefs are for highlighting/re-labeling akas or
+    #  linking to topics within the same guide
+  - href: # required; URL to an external link for general background
+    text: # optional text to hyperlink; defaults to `href` value
+  - link: # required; ID of a registered external guide (see $cfg.links)
+    text: # optional label for this href if other than term name
+    path: # usually the slug in the remote guide to parse
+          #  in $cfg.links.tplt Liquid; required if different from
+          #  the term's own slug
