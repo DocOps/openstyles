@@ -1,6 +1,8 @@
 :vale_www: https://docs.errata.ai/vale/about
 :freestyles_www: https://www.freestylegui.de
+:freestyles_git: https://github.com/DocOps/freestyles
 :openstyles_www: https://www.openstyleguid.es
+:openstyles_git: https://github.com/DocOps/openstyles
 :docopslab_www:  https://github.com/DocOps
 :toc: macro
 ifndef::env-github[:icons: font]
