@@ -1,0 +1,55 @@
+= User Stories for Open Styles Project
+
+The following objectives are organized by user role.
+
+== Style Guide Contributor
+
+[.case]_As a style-guide contributor..._
+
+. I can register terms and the rules governing them along with custom metadata.
+
+. I can register general language-usage and syntax rules with rich logic and custom metadata.
+
+. I can author topical pages in AsciiDoc or Markdown to complement and contextualize reference material.
+
+== Style Guide Administrator
+
+[.case]_As a style-guide administrator..._
+
+. My CI/CD platform or local CLI utility can test source code for compliance with the terms and rules.
+
+. My text/code editor can test source code for compliance with the terms and rules.
+
+. I can establish a single-file or multi-file structure for the datasoruce.
+
+. I can fork elements from other style guides of compatible format.
+
+. I can subscribe to other style guides of compatible format.
+
+. I can filter upstream style guides I subscribe to.
+
+. I can generate HTML editions of style guides.
+
+. I can generate PDF editions of style guides.
+
+== Style Guide End User
+
+[.case]_As a developer or technical author using a style guide..._
+
+. I can browse terms and rules in a style guide.
+
+. I can search terms and rules in a style guide.
+
+== Glossary Contributor
+
+[.case]_As a glossary contributor..._
+
+. I can register terms accompanied by descriptions/definitions and organized with metadata.
+
+== Glossary End User
+
+[.case]_As a product/documentation end user..._
+
+. I can find standardized definitions and other information about relevant terms.
+
+. I can find definitions for terms where they appear in the text of the documentation set.
