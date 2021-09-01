@@ -42,7 +42,7 @@ These terms and rules obey an internal logic can be combined and reshaped for re
 The Open Styles framework includes *basic back-end (Jekyll) and front-end (jQuery) tooling* to render your data for reference display and interactivity.
 If you extend it to incorporate other converters or front-end components, please consider contributing back to this project.
 
-The flagship project of Open Styles, and currently the only known implementation, is the link:{freestyles_www}[*FreeStyles* Technical Documentation Writer's Reference].
+The flagship project of Open Styles, and currently the only known implementation, is the link:{freestyles_git}[*FreeStyles* Technical Documentation Writer's Reference].
 Use that project as a guide or customize it for your own purposes.
 
 == Project Scope
