@@ -20,7 +20,7 @@ The following objectives are organized by user role.
 
 . My text/code editor can test source code for compliance with the terms and rules.
 
-. I can establish a single-file or multi-file structure for the datasoruce.
+. I can establish a single-file or multi-file structure for the datasource.
 
 . I can fork elements from other style guides of compatible format.
 
@@ -32,6 +32,8 @@ The following objectives are organized by user role.
 
 . I can generate PDF editions of style guides.
 
+. I can generate Vale linter styles and vocabularies based on style guides.
+
 == Style Guide End User
 
 [.case]_As a developer or technical author using a style guide..._
@@ -39,6 +41,10 @@ The following objectives are organized by user role.
 . I can browse terms and rules in a style guide.
 
 . I can search terms and rules in a style guide.
+
+. I can see style-error alerts in real time as I type.
+
+. I can see style-error reports at build time.
 
 == Glossary Contributor
 
