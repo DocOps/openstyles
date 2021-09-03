@@ -58,6 +58,7 @@ The aim of the Open Styles project is to empower authors, reviewers, and automat
 . Exemplary parser implementations:
 * Jekyll/Liquid-based parser of rule/term objects into content objects & pages
 * JavaScript implementation identifies glossary terms
+* Converter for Vale linter styles and vocabularies
 * [Your implementation here?]
 
 == Project Status
